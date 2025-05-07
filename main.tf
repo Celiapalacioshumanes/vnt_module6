@@ -1,5 +1,5 @@
 module "vnet" {
-  source = "git::https://github.com/Celiapalacioshumanes/vnt_module6.git"
+  source = "git::https://github.com/Celiapalacioshumanes/vnt_module6/vnt_module7.git"
 
   vnet_name                    = "vnetceliatfexercise07"
   vnet_address_space           = ["10.2.0.0/16"]
