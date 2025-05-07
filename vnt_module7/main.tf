@@ -1,4 +1,4 @@
-module "subnets" {
+module "subnet" {
   for_each = { for subnet in var.subnets : subnet.name => subnet }
 
   source              = "./module/subnet"
@@ -8,9 +8,9 @@ module "subnets" {
   resource_group_name = var.existent_resource_group_name
 }
 
-module "nsgs" {
+module "nsg" {
   for_each = {
-    for subnet in var.subnets : subnet.name => subnet.nsg
+    for subnet in var.subnet : subnet.name => subnet.nsg
     if contains(keys(subnet), "nsg")
   }
 
